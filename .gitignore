@@ -123,6 +123,6 @@ venv.bak/
 # MAC OS file
 .DS_Store
 
-
-# GloVe source code
-# GloVe-1.2/*
+# Compressed file
+*.tar.gz
+*.zip
