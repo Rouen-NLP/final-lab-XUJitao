@@ -112,7 +112,7 @@ venv.bak/
 
 # models trained
 *.bin
-# *.vec
+*.vec
 *.model
 *.npy
 *_vocab
