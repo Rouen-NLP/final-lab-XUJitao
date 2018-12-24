@@ -36,7 +36,7 @@ Les données originaux sont des images de documents numérisés, répartis dans 
 
 Dans ce TP, les données que nous avons utilisé sont un échantillon aléatoire des documents, qui contiennent 3482 documents répartis dans les catégories dessus. Ces données sont des textes contenu dans les documents obtenu par OCR. Voici la répatition des documents.
 
-![Figure_1](repartition_donnees.png  "Répartition des données")
+![Figure_1](images/repartition_donnees.png  "Répartition des données")
 
 Nous pouvons voir que les données sont déséquilibres. Les classes Email, Form, Letter et Memo sont sur-représentés par rapport aux autres classes. Dans ce cas là, il ne faudra pas utiliser directement la précision pour évaluer la performance du modèle. Afin de mieux évaluer les modèle, nous allons utiliser F1-score comme métric et la matrice de confusion pour visualiser la performance.
 
@@ -44,7 +44,7 @@ Nous pouvons voir que les données sont déséquilibres. Les classes Email, Form
 
 Nous avons effectué aussi une statistique sur la longueur de chaque document, c'est-à-dire le nombre de mots dans chaque document.
 
-![Figure_2](longueur_doc.png  "Longueur de document")
+![Figure_2](images/longueur_doc.png  "Longueur de document")
 
 Nous pouvons constater que la plupart des documents ont une longueur inférieure que 500 mots. Cette statistique nous permet de couper les document plus long que 500 mots pour avoir une taille de document fixe quand nous entraînons les réseaux de neurones.
 
@@ -141,9 +141,9 @@ Le modèle TF-Attention a eu le résultat de 21.09%. Ce résultat n'est pas du t
 
 En calculant le résultat de self-attention et affichant la matrice d'attention, nous avons trouver que la matrice d'attention a des valeurs très petites. C'est parce que le vecteur de TF-IDF est très sparse dans nos données, donc il existe beaucoup de 0 dans le vecteur. En calculant le produit entre chaque position du vecteur et tout les autres postion, nous obtenons encore plus de zero dans la matrice d'attention. La sortie de self-attention nous a donné des valeurs très proche pour chaque vecteur du document. C'est à dire un vecteur de taille 2000 peut être considéré comme une seule valeur parce que il n'existe pas de différence entre chaque position de vecteur. Dans ce cas là, nous avons perdu beaucoup d'information du document et donc le modèle ne pouvait pas converger. Voici la matrice de de TF-IDF et celle en sortie de self-attention.
 
-![Figure_3](tf_idf.png)
+![Figure_3](images/tf_idf.png)
 
-![Figure_4](self_att.png )
+![Figure_4](images/self_att.png )
 
 ### 4.6 WV-Attention
 
@@ -153,7 +153,9 @@ Le résultat de WV-Attention est 72.59%. Ce modèle subit aussi forte sur-appren
 
 Après avoir comparer les résultat des modèles ci-dessus, nous avons décidé d'utiliser TF-IDF-NN comme la solution finale. Non seulement parce que il est le plus performant, mais aussi parce que le temps de calcul pour ce modèle est plus rapide que la plupart des autres modèles. Ce modèle contient une seule couche caché avec 1024 d'unités. Nous avons utilisé la probabilité 0.8 pour Dropout afin de diminuer sur-apprentissage. Voici un bilan du modèle : 
 
-![Figure_5](bilan_final.png )
+![Figure_5](images/bilan_final.png )
+
+Considérant la forte aléatoirété, les résultat peuvent varier entre une borne d'environs 3-4% de F1-score. Dans ce cas là, la différence entre tout les modèles sauf TF-Attention est assez faible. Nous ne pouvons pas déterminer un modèle qui est sûr d'être plus performant que d'autres. Celon nos expérimentations, CNN-LSTM est peut-être un peu mieux que les autres de 1% de F1-score, mais le temps de calcul est beaucoup plus long que les autres.
 
 ## 5. Améliorations
 
