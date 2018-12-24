@@ -104,7 +104,7 @@ Les modèle ci-dessus n'utilisent pas la représentation TF-IDF parce que les ar
 
 [Transformer](https://arxiv.org/abs/1706.03762) est un modèle très performant qui utilise le mécanisme d'attention. Le coeur du modèle est le méchanisme de self-attention, qui est calculé par : 
 
-$$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
+$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$
 
 Nous avons construit un modèle avec une couche de self-attention et des couches de dense pour réaliser l'idée simple de Transformer. Vu que la couche de self-attention ne contient pas de paramètre entraînable et nous n'avons pas réaliser multi-head self-attention, nous pouvons aussi ajouter une deuxième couche de self attention dans notre modèle.
 
