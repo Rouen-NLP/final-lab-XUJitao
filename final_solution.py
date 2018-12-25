@@ -2,12 +2,10 @@ import numpy as np
 import os
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-#%matplotlib inline
 from sklearn.metrics import confusion_matrix, f1_score
 from sklearn.metrics import classification_report, precision_recall_fscore_support, accuracy_score
 import itertools
 from time import time
-import fasttext
 from sklearn import preprocessing
 from keras.utils import np_utils
 from keras.layers import Dense, Embedding, Input, Reshape
