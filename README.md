@@ -4,7 +4,7 @@ This is the final lab project of Text Analysis of Jitao XU.
 
   ```python3 final_solution.py```
 
-* The notebook ```Final_Project.ipynb``` contains all codes of prepocessing data, analysis of data, all tried models as well as training process of FastText Skipgram word vectors. In order to run the notebook, you need to install both ```[fastText](https://github.com/facebookresearch/fastText/tree/master/python)```, open sourced by Facebook, and [fasttext](https://pypi.org/project/fasttext/), another version coded by others. 
+* The notebook ```Final_Project.ipynb``` contains all codes of prepocessing data, analysis of data, all tried models as well as training process of FastText Skipgram word vectors. In order to run the notebook, you need to install both [fastText](https://github.com/facebookresearch/fastText/tree/master/python), open sourced by Facebook, and [fasttext](https://pypi.org/project/fasttext/), another version coded by others. 
 
 * ```ft_skipgram_300.vec``` and ```ft_skipgram_100.vec``` are pretrained word vectors from all data in ```data```
 
